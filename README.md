@@ -1,5 +1,7 @@
 # [React Native Meetup 11/9/17](https://www.eventbrite.com/e/building-your-first-react-native-app-tickets-39594131112)
 
+Please use the completed repository as your reference.
+
 ## Building your first React Native app
 
 Do you want to learn how to build native apps for both iOS and Android with a single code base and JavaScript/React skills? React Native will allow you to do that. This meetup will assume some knowledge of JavaScript and React.
