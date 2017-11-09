@@ -1,6 +1,9 @@
-## React Native Meetup - Building your first React Native app
+# [React Native Meetup 11/9/17](https://www.eventbrite.com/e/building-your-first-react-native-app-tickets-39594131112)
+
+## Building your first React Native app
 
 Do you want to learn how to build native apps for both iOS and Android with a single code base and JavaScript/React skills? React Native will allow you to do that. This meetup will assume some knowledge of JavaScript and React.
+
 I will walk you through building a simple list/detail app from scratch and then it's your turn! Crack open your laptops and let's code!
 
 ### Getting started
@@ -18,4 +21,136 @@ create-react-native-app <your-app-name>
 Add libraries
 ```
 yarn add axios react-native-elements react-navigation
+```
+
+### Add navigation
+
+* Create components folder, add the following
+  * Home.js
+  * Details.js
+
+```
+import { StackNavigator } from 'react-navigation';
+
+const RootNavigator = StackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: ({navigation}) => ({
+      title: 'Home',
+    })
+  },
+  Details: {
+    screen: DetailScreen,
+    navigationOptions: ({navigation}) => ({
+      title: 'Detail',
+    })
+  },
+});
+```
+
+### List Page
+
+In Home.js make a call to JSON Placeholder data as the data provider.
+
+```
+componentDidMount() {
+  axios.get(`https://jsonplaceholder.typicode.com/users`).then(result => this.setState( { users: result.data } ));
+}
+```
+
+Create a function to transform the data
+
+```
+getUsers() {
+  const { navigate } = this.props.navigation;
+  const photoUrl = 'https://s3.us-east-2.amazonaws.com/g54capstone/person-placeholder.png';
+  return this.state.users.map(user =>
+    <ListItem
+      key={user.id}
+      title={user.name}
+      roundAvatar
+      avatar={{uri:photoUrl}}
+      onPress={() => navigate('Details', user)}
+    />
+  );
+}
+```
+
+Use React Native Elements Card and ListItem to format the data
+
+```
+<ScrollView>
+  <View style={styles.headerContainer}>
+    <Icon color="white" name="face" size={62} />
+    <Text style={styles.heading}>Users</Text>
+  </View>
+  <Card containerStyle={styles.container}>
+    { this.getUsers() }
+  </Card>
+</ScrollView>
+```
+
+Add some styling
+
+```
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 15
+  },
+  headerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 40,
+    backgroundColor: '#FF9033',
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22,
+  }
+});
+```
+
+### Details Page
+
+In Details.js, use React Native Elements Card and List to format the data
+
+```
+<Card
+  title={name}
+  image={{uri:photoUrl}}
+  imageStyle={styles.photoImage}
+  >
+  <List containerStyle={styles.listContainer}>
+    <ListItem
+      title={phone}
+      hideChevron={true}
+    />
+    <ListItem
+      title={email}
+      hideChevron={true}
+    />
+    <ListItem
+      title={username}
+      hideChevron={true}
+    />
+  </List>
+  <Button
+    raised
+    title='Edit' />
+</Card>
+```
+
+Add some styling
+
+```
+const styles = StyleSheet.create({
+  listContainer: {
+    marginBottom: 20
+  },
+  photoImage: {
+    height: 250,
+    width: 343
+  }
+});
 ```
