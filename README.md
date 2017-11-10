@@ -20,7 +20,17 @@ Create your app
 create-react-native-app <your-app-name>
 ```
 
+Switch to the newly created directory, for example:
+
+```
+cd <your-app-name>
+```
+
 Add libraries
+```
+npm install --save axios react-native-elements react-navigation
+```
+or
 ```
 yarn add axios react-native-elements react-navigation
 ```
