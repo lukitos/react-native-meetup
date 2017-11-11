@@ -8,6 +8,12 @@ Do you want to learn how to build native apps for both iOS and Android with a si
 
 I will walk you through building a simple list/detail app from scratch and then it's your turn! Crack open your laptops and let's code!
 
+Finished app
+
+![alt text][logo]
+
+[logo]: images/list-detail.png "List Details"
+
 ### Getting started
 
 Install CRNA
@@ -42,7 +48,7 @@ yarn add axios react-native-elements react-navigation
 
 ### Let's Code!
 
-Use your favorite editor (e.g., [Atom](https://atom.io/)) to add/modify the code. You can test your app using the following:
+Use your favorite editor (e.g., [Atom](https://atom.io/)) to add/modify the code. You can test your app using the following command:
 
 ```
 npm start
@@ -59,8 +65,6 @@ yarn start
   * Details.js
 
 ```
-import { StackNavigator } from 'react-navigation';
-
 const RootNavigator = StackNavigator({
   Home: {
     screen: HomeScreen,
