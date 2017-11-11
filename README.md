@@ -42,7 +42,7 @@ yarn add axios react-native-elements react-navigation
 
 ### Let's Code!
 
-Use your favorite editor (e.g., Atom) to add/modify the code. You can test your app using the following:
+Use your favorite editor (e.g., [Atom](https://atom.io/)) to add/modify the code. You can test your app using the following:
 
 ```
 npm start
