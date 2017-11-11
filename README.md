@@ -8,7 +8,7 @@ Do you want to learn how to build native apps for both iOS and Android with a si
 
 I will walk you through building a simple list/detail app from scratch and then it's your turn! Crack open your laptops and let's code!
 
-Finished app
+See the screenshots of the finished app below.
 
 ![alt text][logo]
 
@@ -36,7 +36,7 @@ cd <your-app-name>
 
 I recommend using [React Navigation](https://reactnavigation.org/) for routing, [React Native Elements UI Toolkit](https://react-native-training.github.io/react-native-elements/) for styling, and [Axios](https://www.npmjs.com/package/axios) to connect to the data provider.
 
-
+I used [JSON Placeholder](https://jsonplaceholder.typicode.com/) for data provider.
 
 ```
 npm install --save axios react-native-elements react-navigation
