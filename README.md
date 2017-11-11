@@ -1,4 +1,4 @@
-# [React Native Meetup 11/9/17](https://www.eventbrite.com/e/building-your-first-react-native-app-tickets-39594131112)
+# [React Native Meetup 11/9/17](https://www.meetup.com/ltcphx/events/244849005)
 
 Please use the completed repository as your reference.
 
@@ -26,13 +26,28 @@ Switch to the newly created directory, for example:
 cd <your-app-name>
 ```
 
-Add libraries
+### Libraries
+
+I recommend using [React Navigation](https://reactnavigation.org/) for routing, [React Native Elements UI Toolkit](https://react-native-training.github.io/react-native-elements/) for styling, and [Axios](https://www.npmjs.com/package/axios) to connect to the data provider.
+
+
+
 ```
 npm install --save axios react-native-elements react-navigation
 ```
 or
 ```
 yarn add axios react-native-elements react-navigation
+```
+
+Use your favorite editor (e.g., Atom) to add/modify the code. You can test your app using the following:
+
+```
+npm start
+```
+or
+```
+yarn start
 ```
 
 ### Add navigation
